@@ -7,3 +7,21 @@
   width: 18px;
   height: 18px;
 }
+
+.action-icons {
+  display: none;
+  top: 5px;
+  right: 5px;
+  transition: 0.5s;
+}
+
+.action-trash,
+.action-edit {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.employee-card:hover .action-icons {
+  display: block;
+}

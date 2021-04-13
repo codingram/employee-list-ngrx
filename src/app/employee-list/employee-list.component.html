@@ -2,10 +2,40 @@
     The People
 </div>
 <div class="container-fluid">
-
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let employee of data">
-            <app-employee [employee]="employee"></app-employee>
+        <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let employee of data$ |async">
+            <app-employee (editEvent)="edit($event)" (removeEvent)="remove($event)" [employee]="employee"></app-employee>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3" data-toggle="modal" data-target="#addEmployeeModal">
+            <div class="employee-card text-muted text-center shadow rounded-lg m-5 m-sm-0 mb-sm-3 p-3">
+                <svg class="add-more-icon mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                    Click Here to <br>
+                    Add Employee
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <app-add-employee-form></app-add-employee-form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editEmployeeModal" tabindex="-1" aria-labelledby="editEmployeeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <app-edit-employee-form *ngIf="editData" (saveEdit)="saveEdits($event)" [employeeData]="editData"></app-edit-employee-form>
         </div>
     </div>
 </div>

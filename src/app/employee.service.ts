@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class EmployeeService {
   constructor(private http: HttpClient) { }
 
-  getEmployees(): Observable<any> {
-    return this.http.get<any>('get_voice_escalation_rules');
+  getEmployees() {
+    return this.http.get<any>('https://reqres.in/api/users?page=1');
   }
 }
