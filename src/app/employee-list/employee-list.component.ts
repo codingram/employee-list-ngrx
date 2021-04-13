@@ -30,7 +30,6 @@ export class EmployeeListComponent implements OnInit {
     $('#editEmployeeModal').on('hidden.bs.modal', (e) => {
       this.editData = null;
     });
-    // this.store.dispatch(removeEmployee({ id }));
   }
 
   saveEdits(data: Employee): void {

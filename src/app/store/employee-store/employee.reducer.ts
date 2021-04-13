@@ -1,5 +1,4 @@
-// tslint:disable-next-line: quotemark
-import { Action, ActionReducer, createReducer, on, State } from "@ngrx/store";
+import { Action, createReducer, on } from '@ngrx/store';
 import { addEmployee, editEmployee, loadEmployees, removeEmployee } from './employee.action';
 
 export interface Employee {
