@@ -26,7 +26,6 @@ const employeeReducer = createReducer(
     }),
 
     on(editEmployee, (state, props: { data: Employee }) => {
-        console.log('🚀 => on => props', props);
         const newState = state.map((emp) => {
             if (emp.id === props.data.id) {
                 return props.data;

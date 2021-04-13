@@ -21,7 +21,6 @@ export class EmployeeListComponent implements OnInit {
   }
 
   remove(id): void {
-    console.log('🚀 => remove => id', id);
     this.store.dispatch(removeEmployee(id));
   }
 
